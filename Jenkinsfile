@@ -18,7 +18,6 @@ pipeline {
         stage('Docker Build') {
             agent any
             steps {
-                unstash 'build-artifact'
                 sh 'docker build --tag docker.io/gtadam89/${APPLICATION}:0.${BUILD_ID}.0 .'
                 sh 'docker login -u "${DOCKER_USERNAME}" -p "${DOCKER_PASSWORD}"'
                 sh 'docker push docker.io/gtadam89/${APPLICATION}:0.${BUILD_ID}.0'
