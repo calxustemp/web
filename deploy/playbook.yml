@@ -1,0 +1,44 @@
+---
+- name: Deployment of Docker Compose Service
+  hosts: all
+  tasks:
+
+    - name: Ensure directory structure exists
+      become: true
+      file: path=/etc/adamsantiago/web state=directory
+
+    - name: Copy docker compose to appropriate directory
+      become: true
+      copy:
+        src: docker-compose.yml
+        dest: /etc/adamsantiago/web/docker-compose.yml
+        owner: gadam
+        group: gadam
+        mode: '0755'
+
+    - name: Copy service to appropriate directory
+      become: true
+      copy:
+        src: web.service
+        dest: /etc/systemd/system/web.service
+        owner: gadam
+        group: gadam
+        mode: '0755'
+
+    - name: Reload configurations for service
+      become: true
+      systemd:
+        daemon_reload: yes
+
+    - name: Ensure web service begins on startup
+      become: true
+      systemd:
+        name: web
+        enabled: yes
+        masked: no
+
+    - name: Make sure web service is running
+      become: true
+      systemd:
+        state: restarted
+        name: web

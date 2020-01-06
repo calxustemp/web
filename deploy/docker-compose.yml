@@ -1,0 +1,19 @@
+version: "3.4"
+
+services:
+
+  post-service:
+    image: docker.io/gtadam89/web:latest
+    expose: 
+      - 4568
+    networks:
+      internal:
+        ipv4_address: 10.5.13.5
+
+networks:
+
+  internal:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.5.13.0/24

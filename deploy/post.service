@@ -1,0 +1,20 @@
+[Unit]
+Description=web.service
+Requires=web.service
+After=web.service
+
+[Service]
+Restart=always
+
+# Remove old containers, images and volumes
+ExecStartPre=/usr/bin/docker-compose -f /etc/adamsantiago/web/docker-compose.yml down
+
+# Compose up
+ExecStart=/usr/bin/docker-compose -f /etc/adamsantiago/web/docker-compose.yml up
+
+# Compose down, remove containers and volumes
+ExecStop=/usr/bin/docker-compose -f /etc/adamsantiago/web/docker-compose.yml down
+ExecStop=/usr/bin/docker rmi gtadam89/web:latest
+
+[Install]
+WantedBy=multi-web.target
