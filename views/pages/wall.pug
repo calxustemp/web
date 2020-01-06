@@ -1,0 +1,13 @@
+extends ../layout/page-layout.pug
+
+block page-content
+
+    include ../components/card-post.pug
+
+    for post in render_object.posts
+        include ../components/card.pug
+
+block scripts
+    script(
+        src="/javascripts/post.js"
+    )

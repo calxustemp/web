@@ -1,0 +1,28 @@
+- var sidebar_title = "Ashilda"
+- var home_url = "/"
+- var home_text = "Dashboard"
+- var actions_group_text = "Actions"
+- var actionsJson = [{ name: 'wall', title: 'Wall', url: 'wall' }, { name: 'request', title: 'Request', url: 'request' }]
+
+div(
+    class="bg-light"
+    class="border-right"
+    id="sidebar-wrapper"
+)
+    div(
+        class="sidebar-heading"
+    ) #{sidebar_title}
+
+    div(
+        class="list-group"
+        class="list-group-flush"
+    )
+
+    each val in actionsJson
+
+        a(
+            class="list-group-item"
+            class="list-group-item-action"
+            class="bg-light"
+            href="/" + val.url
+        ) #{val.title}

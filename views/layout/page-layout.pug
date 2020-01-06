@@ -1,0 +1,64 @@
+doctype html
+
+html
+    head
+        title= title
+        link(
+            rel="stylesheet"
+            type="text/css"
+            href="/vendor/bootstrap/css/bootstrap.min.css"
+        )
+        link(
+            rel="stylesheet"
+            type="text/css"
+            href="/vendor/fontawesome/css/fontawesome.css"
+        )
+        link(
+            rel="stylesheet"
+            type="text/css"
+            href="/vendor/fontawesome/css/brands.css"
+        )
+        link(
+            rel="stylesheet"
+            type="text/css"
+            href="/vendor/fontawesome/css/solid.css"
+        )
+        link(
+            rel="stylesheet"
+            type="text/css" 
+            href="/stylesheets/simple-sidebar.css"
+        )
+
+    body
+        div(
+            class="d-flex"
+            class="toggled"
+            id="wrapper"
+        )
+            include ../components/sidebar.pug
+            div(
+                id="page-content-wrapper"
+            )
+                include ../components/navbar.pug
+                div(
+                    id="content"
+                )
+                    div(
+                        class="container-fluid"
+                    )
+                        block page-content
+                include ../components/footer.pug
+        
+        script(
+            src="/vendor/jquery/jquery.min.js"
+        )
+        script(
+            src="/vendor/fontawesome/js/all.js"
+        )
+        script(
+            src="/vendor/bootstrap/js/bootstrap.bundle.min.js"
+        )
+        script(
+            src="/javascripts/menu-toggle.js"
+        )
+        block scripts

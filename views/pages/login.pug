@@ -1,0 +1,13 @@
+extends ../layout/page-layout.pug
+
+block page-content
+
+    include ../components/login.pug
+
+block scripts
+    script(
+        src="/javascripts/login.js"
+    )
+    script(
+        src="/vendor/md5/md5.js"
+    )

@@ -1,0 +1,98 @@
+- var username_label = "Email address: "
+- var email_in_use_label = "Email address is already in use"
+- var first_name_label = "First name: "
+- var last_name_label = "Last name: "
+- var password_label = "Password: "
+- var repeat_password_label = "Repeat password: "
+- var incorrect_password_label = "Passwords do not match"
+- var submit_label = "Register"
+- var login_link = "Log In"
+
+div(
+    class="form-group"
+)
+    label(
+        for="email"
+    ) #{username_label}
+
+    input(
+        type="email"
+        class="form-control"
+        id="email"
+    )
+div(
+    id="email_in_use_text"
+    hidden="true"
+)
+    p(
+        class="text-justify"
+        style="color: red"
+    ) #{email_in_use_label}
+div(
+    class="form-group"
+)
+    label(
+        for="first_name"
+    ) #{first_name_label}
+
+    input(
+        type="first_name"
+        class="form-control"
+        id="first_name"
+    )
+div(
+    class="form-group"
+)
+    label(
+        for="last_name"
+    ) #{last_name_label}
+
+    input(
+        type="last_name"
+        class="form-control"
+        id="last_name"
+    )
+div(
+    class="form-group"
+)
+    label(
+        for="pwd"
+    ) #{password_label}
+
+    input(
+        type="password"
+        class="form-control"
+        id="pwd"
+    )
+div(
+    id="invalid_passwords_text"
+    hidden="true"
+)
+    p(
+        class="text-justify"
+        style="color: red"
+    ) #{incorrect_password_label}
+div(
+    class="form-group"
+)
+    label(
+        for="repeat_pwd"
+    ) #{repeat_password_label}
+
+    input(
+        type="password"
+        class="form-control"
+        id="repeat_pwd"
+    )
+button(
+    id="register_submit"
+    type="submit"
+    class="btn"
+    class="btn-primary"
+) #{submit_label}
+
+p
+
+a(
+    href="/login"
+) #{login_link}

@@ -1,0 +1,16 @@
+- var card_title = "Gordon Adam"
+- var card_text = "Text contained in the post"
+div(
+    class="card"
+    style="margin-top: 15px"
+)
+    h5(
+        class="card-header"
+    ) #{post.first_name} #{post.last_name}
+
+    div(
+        class="card-body"
+    )
+        p(
+            class="card-text"
+        ) #{post.text}

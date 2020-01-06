@@ -1,0 +1,27 @@
+- var card_title = "Post"
+- var new_post_button = "Submit"
+div(
+    class="card"
+    style="margin-top: 15px"
+)
+    h5(
+        class="card-header"
+    ) #{card_title}
+
+    div(
+        class="card-body"
+    )
+        div(
+            class="form-group"
+        )
+            textarea(
+                class="form-control"
+                id="postTextArea"
+                rows="2"
+            )
+        button(
+            id="card_post"
+            class="btn"
+            class="btn-primary"
+            class="float-right"
+        ) #{new_post_button}

@@ -1,0 +1,53 @@
+- var sidebar_toggle = "Ashilda"
+- var signout_text = "Sign out"
+- var login_text = "Login"
+- var register_text = "Register"
+
+nav(
+    class="navbar"
+    class="navbar-expand-lg"
+    class="navbar-light"
+    class="bg-light"
+    class="border-bottom"
+)
+    button(
+        class="btn"
+        class="btn-primary"
+        id="menu-toggle"
+    )
+
+        i(
+            id="menu-bars"
+            class="fas"
+            class="fa-bars"
+        )
+    div(
+        class="collapse"
+        class="navbar-collapse"
+        id="navbarSupportedContent"
+    )
+        ul(
+            class="navbar-nav"
+            class="ml-auto"
+            class="mt-2"
+            class="mt-lg-0"
+        )
+            li(
+                class="nav-item"
+                class="active"
+            )
+            if render_object.authenticated
+                a(
+                    class="nav-link"
+                    href="/signout"
+                ) #{signout_text}
+            else
+                a(
+                    class="nav-link"
+                    href="/login"
+                ) #{login_text}
+                
+                a(
+                    class="nav-link"
+                    href="/register"
+                ) #{register_text}

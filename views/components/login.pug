@@ -1,0 +1,52 @@
+- var username_label = "Email address: "
+- var password_label = "Password: "
+- var submit_label = "Login"
+- var incorrect_credentials_label = "The email or password is incorrect"
+- var register_text = "Don't have an account?"
+- var register_link = "Sign Up"
+
+div(
+    class="form-group"
+)
+    label(
+        for="email"
+    ) #{username_label}
+
+    input(
+        type="email"
+        class="form-control"
+        id="email"
+    )
+div(
+    id="invalid_credentials_text"
+    hidden="true"
+)
+    p(
+        class="text-justify"
+        style="color: red"
+    ) #{incorrect_credentials_label}
+div(
+    class="form-group"
+)
+    label(
+        for="pwd"
+    ) #{password_label}
+
+    input(
+        type="password"
+        class="form-control"
+        id="pwd"
+    )
+span
+    button(
+        id="login_submit"
+        type="submit"
+        class="btn"
+        class="btn-primary"
+    ) #{submit_label}
+
+    p
+
+    a(
+        href="/register"
+    ) #{register_link}
