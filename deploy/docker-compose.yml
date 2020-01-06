@@ -5,7 +5,7 @@ services:
   post-service:
     image: docker.io/gtadam89/web:latest
     expose: 
-      - 4568
+      - 8081
     networks:
       internal:
         ipv4_address: 10.5.13.5
